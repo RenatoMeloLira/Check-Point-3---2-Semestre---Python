@@ -1,0 +1,19 @@
+
+#Troca de chaves de Diffie–Hellman
+
+primo = 13
+numgerador = 6
+bob = 5
+alice = 18
+
+
+alice2 = (numgerador ** alice) % primo
+bobnum = (numgerador ** bob) % primo
+alicepublica = (bobnum ** alice) % primo
+bobpublica = (alice ** bobnum) % primo
+
+
+if bobpublica == alicepublica:
+    print('As chaves de BOB e ALICE são iguais!!!')
+    print("Alice:" ,alicepublica)
+    print("Bob" ,bobpublica)
